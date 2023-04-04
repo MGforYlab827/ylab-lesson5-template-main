@@ -3,7 +3,6 @@ package io.ylab.intensive.lesson05.sqlquerybuilder;
 import java.sql.SQLException;
 import java.util.List;
 
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class SQLQueryExtenderTest {
@@ -16,5 +15,6 @@ public class SQLQueryExtenderTest {
     for (String tableName : tables) {
       System.out.println(queryBuilder.queryForTable(tableName));
     }
+    applicationContext.close();
   }
 }

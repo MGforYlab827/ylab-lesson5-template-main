@@ -7,5 +7,8 @@ public class DbApp {
     AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(Config.class);
     applicationContext.start();
     // тут пишем создание и запуск приложения работы с БД
+    DataProcessing dataProcessing = applicationContext.getBean(DataProcessing.class);
+    dataProcessing.waitMessage();
+    applicationContext.close();
   }
 }
